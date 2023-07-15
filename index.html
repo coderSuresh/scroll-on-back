@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test Scroll Back | coderSuresh</title>
+
+    <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .test {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .test0 {
+        background-color: red;
+    }
+
+    .test1 {
+        background-color: purple;
+    }
+
+    .test2 {
+        background-color: blue;
+    }
+
+    .link {
+        text-align: center;
+        width: 100%;
+        margin: 20px auto;
+        font-size: 4rem;
+    }
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <div class="test0 test"></div>
+        <div class="test1 test"></div>
+        <div class="test2 test"></div>
+        <a class="link" href="home.html">Home</a>
+    </main>
+
+    <script>
+
+    if(history.state) {
+        window.scrollTo(0, history.state.scrollY)
+    }
+
+   window.addEventListener("scroll", () => {
+        history.replaceState({
+            scrollY: window.scrollY
+        }, "")
+   })
+
+    </script>
+
+</body>
+</html>
